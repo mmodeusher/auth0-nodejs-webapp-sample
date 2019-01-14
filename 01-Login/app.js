@@ -11,6 +11,7 @@ var userInViews = require('./lib/middleware/userInViews');
 var authRouter = require('./routes/auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var likeRouter = require('./routes/like');
 
 dotenv.load();
 
@@ -53,7 +54,7 @@ app.use(cookieParser());
 
 // config express-session
 var sess = {
-  secret: 'CHANGE THIS SECRET',
+  secret: 'ImVerySecret',
   cookie: {},
   resave: false,
   saveUninitialized: true
@@ -86,6 +87,7 @@ app.use(userInViews());
 app.use('/', authRouter);
 app.use('/', indexRouter);
 app.use('/', usersRouter);
+app.use('/', likeRouter);
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {

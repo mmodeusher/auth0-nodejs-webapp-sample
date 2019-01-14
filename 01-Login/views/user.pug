@@ -3,6 +3,7 @@ extends layout
 block content
   .w3-card-4
     h1 Welcome #{user.nickname}
+    h1 #{user.accesscode}
     img(src=user.picture)
     h2 User profile
     p This is the content of <code>req.user</code>.
