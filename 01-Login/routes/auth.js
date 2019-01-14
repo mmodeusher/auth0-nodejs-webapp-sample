@@ -20,6 +20,7 @@ router.get('/callback', function (req, res, next) {
       delete req.session.returnTo;
       res.redirect(returnTo || '/user');
     });
+    console.log(res);
   })(req, res, next);
 });
 
